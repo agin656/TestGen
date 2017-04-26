@@ -1,0 +1,1639 @@
+--[ 2017.04.25.18.11.36.831.0 ]--
+NewLogger: TestGen
+Version: 1.2
+--[ 2017.04.25.18.11.37.101.0 ]--
+InitTree:
+/gen/TestGen.tokens
+/gen/TestGenLexer.tokens
+/out/production/TestGen/TestGen.class
+/out/production/TestGen/TestGenLexer.class
+/out/production/TestGen/TestGenParser.class
+/out/production/TestGen/TestGenVisitor.class
+/out/production/TestGen/TestGenListener.class
+/out/production/TestGen/TestGenBaseVisitor.class
+/out/production/TestGen/TestGenBaseListener.class
+/out/production/TestGen/TestGenParser$SContext.class
+/out/production/TestGen/TestGenParser$InContext.class
+/out/production/TestGen/TestGenParser$OutContext.class
+/out/production/TestGen/TestGenParser$FuncContext.class
+/out/production/TestGen/TestGenParser$LineContext.class
+/out/production/TestGen/TestGenParser$ErrorContext.class
+/out/production/TestGen/TestGenParser$LinesContext.class
+/out/production/TestGen/TestGenParser$ParamContext.class
+/out/production/TestGen/TestGenParser$ParamsContext.class
+/out/production/TestGen/TestGenParser$CommentContext.class
+/out/production/TestGen/TestGenParser$FuncParamContext.class
+/out/production/TestGen/TestGenParser$FuncParamsContext.class
+/src/TestGen.java
+/src/TestGenLexer.java
+/src/TestGenParser.java
+/src/TestGenVisitor.java
+/src/TestGenListener.java
+/src/TestGenBaseVisitor.java
+/src/TestGenBaseListener.java
+/.idea/libraries/antlr_runtime_4_6.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/workspace.xml
+/test.txt
+/TestGen.g4
+/TestGen.iml
+
+--[ 2017.04.25.18.11.37.116.0 ]--
+InitFile: /src/TestGenVisitor.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link TestGenParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#s}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitS(TestGenParser.SContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#comment}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComment(TestGenParser.CommentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#lines}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLines(TestGenParser.LinesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#line}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLine(TestGenParser.LineContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#in}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIn(TestGenParser.InContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#out}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOut(TestGenParser.OutContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#error}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitError(TestGenParser.ErrorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#params}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParams(TestGenParser.ParamsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#param}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParam(TestGenParser.ParamContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunc(TestGenParser.FuncContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#funcParams}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncParams(TestGenParser.FuncParamsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#funcParam}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncParam(TestGenParser.FuncParamContext ctx);
+}
+
+--[ 2017.04.25.18.11.37.163.0 ]--
+InitFile: /src/TestGenLexer.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+import org.antlr.v4.runtime.Lexer;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.atn.*;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.misc.*;
+
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+public class TestGenLexer extends Lexer {
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+
+	protected static final DFA[] _decisionToDFA;
+	protected static final PredictionContextCache _sharedContextCache =
+		new PredictionContextCache();
+	public static final int
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, Scope=13, Word=14, String=15, WS=16;
+	public static String[] modeNames = {
+		"DEFAULT_MODE"
+	};
+
+	public static final String[] ruleNames = {
+		"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
+		"T__9", "T__10", "T__11", "Scope", "Word", "String", "WS"
+	};
+
+	private static final String[] _LITERAL_NAMES = {
+		null, "'/*'", "'*/'", "'*'", "'^'", "'|'", "'$'", "'in:'", "'out:'", "'error:'", 
+		"','", "'('", "')'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, "Scope", "Word", "String", "WS"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+
+	public TestGenLexer(CharStream input) {
+		super(input);
+		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+
+	@Override
+	public String getGrammarFileName() { return "TestGen.g4"; }
+
+	@Override
+	public String[] getRuleNames() { return ruleNames; }
+
+	@Override
+	public String getSerializedATN() { return _serializedATN; }
+
+	@Override
+	public String[] getModeNames() { return modeNames; }
+
+	@Override
+	public ATN getATN() { return _ATN; }
+
+	public static final String _serializedATN =
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\2\22g\b\1\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\3"+
+		"\2\3\3\3\3\3\3\3\4\3\4\3\5\3\5\3\6\3\6\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t"+
+		"\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\f\3\f\3\r\3\r\3\16"+
+		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16U\n\16"+
+		"\3\17\6\17X\n\17\r\17\16\17Y\3\20\3\20\6\20^\n\20\r\20\16\20_\3\20\3\20"+
+		"\3\21\3\21\3\21\3\21\2\2\22\3\3\5\4\7\5\t\6\13\7\r\b\17\t\21\n\23\13\25"+
+		"\f\27\r\31\16\33\17\35\20\37\21!\22\3\2\5\5\2\62;C\\c|\6\2\"\"\62;C\\"+
+		"c|\7\2\f\f\17\17\"\"))..i\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\2\t\3\2"+
+		"\2\2\2\13\3\2\2\2\2\r\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2"+
+		"\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\2\37\3"+
+		"\2\2\2\2!\3\2\2\2\3#\3\2\2\2\5&\3\2\2\2\7)\3\2\2\2\t+\3\2\2\2\13-\3\2"+
+		"\2\2\r/\3\2\2\2\17\61\3\2\2\2\21\65\3\2\2\2\23:\3\2\2\2\25A\3\2\2\2\27"+
+		"C\3\2\2\2\31E\3\2\2\2\33T\3\2\2\2\35W\3\2\2\2\37[\3\2\2\2!c\3\2\2\2#$"+
+		"\7\61\2\2$%\7,\2\2%\4\3\2\2\2&\'\7,\2\2\'(\7\61\2\2(\6\3\2\2\2)*\7,\2"+
+		"\2*\b\3\2\2\2+,\7`\2\2,\n\3\2\2\2-.\7~\2\2.\f\3\2\2\2/\60\7&\2\2\60\16"+
+		"\3\2\2\2\61\62\7k\2\2\62\63\7p\2\2\63\64\7<\2\2\64\20\3\2\2\2\65\66\7"+
+		"q\2\2\66\67\7w\2\2\678\7v\2\289\7<\2\29\22\3\2\2\2:;\7g\2\2;<\7t\2\2<"+
+		"=\7t\2\2=>\7q\2\2>?\7t\2\2?@\7<\2\2@\24\3\2\2\2AB\7.\2\2B\26\3\2\2\2C"+
+		"D\7*\2\2D\30\3\2\2\2EF\7+\2\2F\32\3\2\2\2GH\7r\2\2HI\7w\2\2IJ\7d\2\2J"+
+		"K\7n\2\2KL\7k\2\2LU\7e\2\2MN\7r\2\2NO\7t\2\2OP\7k\2\2PQ\7x\2\2QR\7c\2"+
+		"\2RS\7v\2\2SU\7g\2\2TG\3\2\2\2TM\3\2\2\2U\34\3\2\2\2VX\t\2\2\2WV\3\2\2"+
+		"\2XY\3\2\2\2YW\3\2\2\2YZ\3\2\2\2Z\36\3\2\2\2[]\7$\2\2\\^\t\3\2\2]\\\3"+
+		"\2\2\2^_\3\2\2\2_]\3\2\2\2_`\3\2\2\2`a\3\2\2\2ab\7$\2\2b \3\2\2\2cd\t"+
+		"\4\2\2de\3\2\2\2ef\b\21\2\2f\"\3\2\2\2\6\2TY_\3\b\2\2";
+	public static final ATN _ATN =
+		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	static {
+		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
+	}
+}
+
+--[ 2017.04.25.18.11.37.186.0 ]--
+InitFile: /src/TestGenListener.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+
+/**
+ * This interface defines a complete listener for a parse tree produced by
+ * {@link TestGenParser}.
+ */
+public interface TestGenListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#s}.
+	 * @param ctx the parse tree
+	 */
+	void enterS(TestGenParser.SContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#s}.
+	 * @param ctx the parse tree
+	 */
+	void exitS(TestGenParser.SContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#comment}.
+	 * @param ctx the parse tree
+	 */
+	void enterComment(TestGenParser.CommentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#comment}.
+	 * @param ctx the parse tree
+	 */
+	void exitComment(TestGenParser.CommentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#lines}.
+	 * @param ctx the parse tree
+	 */
+	void enterLines(TestGenParser.LinesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#lines}.
+	 * @param ctx the parse tree
+	 */
+	void exitLines(TestGenParser.LinesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#line}.
+	 * @param ctx the parse tree
+	 */
+	void enterLine(TestGenParser.LineContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#line}.
+	 * @param ctx the parse tree
+	 */
+	void exitLine(TestGenParser.LineContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#in}.
+	 * @param ctx the parse tree
+	 */
+	void enterIn(TestGenParser.InContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#in}.
+	 * @param ctx the parse tree
+	 */
+	void exitIn(TestGenParser.InContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#out}.
+	 * @param ctx the parse tree
+	 */
+	void enterOut(TestGenParser.OutContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#out}.
+	 * @param ctx the parse tree
+	 */
+	void exitOut(TestGenParser.OutContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#error}.
+	 * @param ctx the parse tree
+	 */
+	void enterError(TestGenParser.ErrorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#error}.
+	 * @param ctx the parse tree
+	 */
+	void exitError(TestGenParser.ErrorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void enterParams(TestGenParser.ParamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void exitParams(TestGenParser.ParamsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void enterParam(TestGenParser.ParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#param}.
+	 * @param ctx the parse tree
+	 */
+	void exitParam(TestGenParser.ParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunc(TestGenParser.FuncContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunc(TestGenParser.FuncContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#funcParams}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncParams(TestGenParser.FuncParamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#funcParams}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncParams(TestGenParser.FuncParamsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#funcParam}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncParam(TestGenParser.FuncParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#funcParam}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncParam(TestGenParser.FuncParamContext ctx);
+}
+
+--[ 2017.04.25.18.11.37.201.0 ]--
+InitFile: /src/TestGenParser.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+import org.antlr.v4.runtime.atn.*;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
+
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+public class TestGenParser extends Parser {
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+
+	protected static final DFA[] _decisionToDFA;
+	protected static final PredictionContextCache _sharedContextCache =
+		new PredictionContextCache();
+	public static final int
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
+		T__9=10, T__10=11, T__11=12, Scope=13, Word=14, String=15, WS=16;
+	public static final int
+		RULE_s = 0, RULE_comment = 1, RULE_lines = 2, RULE_line = 3, RULE_in = 4, 
+		RULE_out = 5, RULE_error = 6, RULE_params = 7, RULE_param = 8, RULE_func = 9, 
+		RULE_funcParams = 10, RULE_funcParam = 11;
+	public static final String[] ruleNames = {
+		"s", "comment", "lines", "line", "in", "out", "error", "params", "param", 
+		"func", "funcParams", "funcParam"
+	};
+
+	private static final String[] _LITERAL_NAMES = {
+		null, "'/*'", "'*/'", "'*'", "'^'", "'|'", "'$'", "'in:'", "'out:'", "'error:'", 
+		"','", "'('", "')'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, null, null, null, null, null, null, null, null, 
+		null, "Scope", "Word", "String", "WS"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "TestGen.g4"; }
+
+	@Override
+	public String[] getRuleNames() { return ruleNames; }
+
+	@Override
+	public String getSerializedATN() { return _serializedATN; }
+
+	@Override
+	public ATN getATN() { return _ATN; }
+
+	public TestGenParser(TokenStream input) {
+		super(input);
+		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+	public static class SContext extends ParserRuleContext {
+		public CommentContext comment() {
+			return getRuleContext(CommentContext.class,0);
+		}
+		public FuncContext func() {
+			return getRuleContext(FuncContext.class,0);
+		}
+		public SContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_s; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterS(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitS(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitS(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SContext s() throws RecognitionException {
+		SContext _localctx = new SContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_s);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(24);
+			comment();
+			setState(25);
+			func();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class CommentContext extends ParserRuleContext {
+		public LinesContext lines() {
+			return getRuleContext(LinesContext.class,0);
+		}
+		public CommentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comment; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterComment(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitComment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitComment(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final CommentContext comment() throws RecognitionException {
+		CommentContext _localctx = new CommentContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_comment);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(27);
+			match(T__0);
+			setState(28);
+			lines();
+			setState(29);
+			match(T__1);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LinesContext extends ParserRuleContext {
+		public LineContext line() {
+			return getRuleContext(LineContext.class,0);
+		}
+		public LinesContext lines() {
+			return getRuleContext(LinesContext.class,0);
+		}
+		public LinesContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_lines; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterLines(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitLines(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitLines(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final LinesContext lines() throws RecognitionException {
+		LinesContext _localctx = new LinesContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_lines);
+		try {
+			setState(35);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__2:
+			case T__3:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(31);
+				line();
+				setState(32);
+				lines();
+				}
+				break;
+			case T__1:
+				enterOuterAlt(_localctx, 2);
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LineContext extends ParserRuleContext {
+		public InContext in() {
+			return getRuleContext(InContext.class,0);
+		}
+		public OutContext out() {
+			return getRuleContext(OutContext.class,0);
+		}
+		public ErrorContext error() {
+			return getRuleContext(ErrorContext.class,0);
+		}
+		public LineContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_line; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterLine(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitLine(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitLine(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final LineContext line() throws RecognitionException {
+		LineContext _localctx = new LineContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_line);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(38);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==T__2) {
+				{
+				setState(37);
+				match(T__2);
+				}
+			}
+
+			setState(40);
+			match(T__3);
+			setState(41);
+			in();
+			setState(42);
+			match(T__4);
+			setState(43);
+			out();
+			setState(44);
+			match(T__4);
+			setState(45);
+			error();
+			setState(46);
+			match(T__5);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class InContext extends ParserRuleContext {
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
+		public InContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_in; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterIn(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitIn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitIn(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final InContext in() throws RecognitionException {
+		InContext _localctx = new InContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_in);
+		try {
+			setState(51);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__6:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(48);
+				match(T__6);
+				setState(49);
+				params();
+				}
+				break;
+			case T__4:
+				enterOuterAlt(_localctx, 2);
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OutContext extends ParserRuleContext {
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
+		public OutContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_out; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterOut(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitOut(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitOut(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OutContext out() throws RecognitionException {
+		OutContext _localctx = new OutContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_out);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(53);
+			match(T__7);
+			setState(54);
+			params();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ErrorContext extends ParserRuleContext {
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
+		public ErrorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_error; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterError(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitError(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitError(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ErrorContext error() throws RecognitionException {
+		ErrorContext _localctx = new ErrorContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_error);
+		try {
+			setState(59);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__8:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(56);
+				match(T__8);
+				setState(57);
+				params();
+				}
+				break;
+			case T__5:
+				enterOuterAlt(_localctx, 2);
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParamsContext extends ParserRuleContext {
+		public ParamContext param() {
+			return getRuleContext(ParamContext.class,0);
+		}
+		public ParamsContext params() {
+			return getRuleContext(ParamsContext.class,0);
+		}
+		public ParamsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_params; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterParams(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitParams(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitParams(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ParamsContext params() throws RecognitionException {
+		ParamsContext _localctx = new ParamsContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_params);
+		try {
+			setState(66);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(61);
+				param();
+				setState(62);
+				match(T__9);
+				setState(63);
+				params();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(65);
+				param();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ParamContext extends ParserRuleContext {
+		public TerminalNode Word() { return getToken(TestGenParser.Word, 0); }
+		public TerminalNode String() { return getToken(TestGenParser.String, 0); }
+		public ParamContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_param; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitParam(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitParam(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ParamContext param() throws RecognitionException {
+		ParamContext _localctx = new ParamContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_param);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(68);
+			_la = _input.LA(1);
+			if ( !(_la==Word || _la==String) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FuncContext extends ParserRuleContext {
+		public List<TerminalNode> Word() { return getTokens(TestGenParser.Word); }
+		public TerminalNode Word(int i) {
+			return getToken(TestGenParser.Word, i);
+		}
+		public FuncParamsContext funcParams() {
+			return getRuleContext(FuncParamsContext.class,0);
+		}
+		public TerminalNode Scope() { return getToken(TestGenParser.Scope, 0); }
+		public FuncContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_func; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterFunc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitFunc(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitFunc(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FuncContext func() throws RecognitionException {
+		FuncContext _localctx = new FuncContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_func);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==Scope) {
+				{
+				setState(70);
+				match(Scope);
+				}
+			}
+
+			setState(73);
+			match(Word);
+			setState(74);
+			match(Word);
+			setState(75);
+			match(T__10);
+			setState(76);
+			funcParams();
+			setState(77);
+			match(T__11);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FuncParamsContext extends ParserRuleContext {
+		public FuncParamContext funcParam() {
+			return getRuleContext(FuncParamContext.class,0);
+		}
+		public FuncParamsContext funcParams() {
+			return getRuleContext(FuncParamsContext.class,0);
+		}
+		public FuncParamsContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_funcParams; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterFuncParams(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitFuncParams(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitFuncParams(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FuncParamsContext funcParams() throws RecognitionException {
+		FuncParamsContext _localctx = new FuncParamsContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_funcParams);
+		try {
+			setState(85);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(79);
+				funcParam();
+				setState(80);
+				match(T__9);
+				setState(81);
+				funcParams();
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(83);
+				funcParam();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FuncParamContext extends ParserRuleContext {
+		public List<TerminalNode> Word() { return getTokens(TestGenParser.Word); }
+		public TerminalNode Word(int i) {
+			return getToken(TestGenParser.Word, i);
+		}
+		public FuncParamContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_funcParam; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).enterFuncParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TestGenListener ) ((TestGenListener)listener).exitFuncParam(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TestGenVisitor ) return ((TestGenVisitor<? extends T>)visitor).visitFuncParam(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FuncParamContext funcParam() throws RecognitionException {
+		FuncParamContext _localctx = new FuncParamContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_funcParam);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(87);
+			match(Word);
+			setState(88);
+			match(Word);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static final String _serializedATN =
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\22]\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
+		"\f\t\f\4\r\t\r\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4&\n\4\3"+
+		"\5\5\5)\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\6\5\6\66\n\6\3\7"+
+		"\3\7\3\7\3\b\3\b\3\b\5\b>\n\b\3\t\3\t\3\t\3\t\3\t\5\tE\n\t\3\n\3\n\3\13"+
+		"\5\13J\n\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\5\f"+
+		"X\n\f\3\r\3\r\3\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\3\3\2\20"+
+		"\21X\2\32\3\2\2\2\4\35\3\2\2\2\6%\3\2\2\2\b(\3\2\2\2\n\65\3\2\2\2\f\67"+
+		"\3\2\2\2\16=\3\2\2\2\20D\3\2\2\2\22F\3\2\2\2\24I\3\2\2\2\26W\3\2\2\2\30"+
+		"Y\3\2\2\2\32\33\5\4\3\2\33\34\5\24\13\2\34\3\3\2\2\2\35\36\7\3\2\2\36"+
+		"\37\5\6\4\2\37 \7\4\2\2 \5\3\2\2\2!\"\5\b\5\2\"#\5\6\4\2#&\3\2\2\2$&\3"+
+		"\2\2\2%!\3\2\2\2%$\3\2\2\2&\7\3\2\2\2\')\7\5\2\2(\'\3\2\2\2()\3\2\2\2"+
+		")*\3\2\2\2*+\7\6\2\2+,\5\n\6\2,-\7\7\2\2-.\5\f\7\2./\7\7\2\2/\60\5\16"+
+		"\b\2\60\61\7\b\2\2\61\t\3\2\2\2\62\63\7\t\2\2\63\66\5\20\t\2\64\66\3\2"+
+		"\2\2\65\62\3\2\2\2\65\64\3\2\2\2\66\13\3\2\2\2\678\7\n\2\289\5\20\t\2"+
+		"9\r\3\2\2\2:;\7\13\2\2;>\5\20\t\2<>\3\2\2\2=:\3\2\2\2=<\3\2\2\2>\17\3"+
+		"\2\2\2?@\5\22\n\2@A\7\f\2\2AB\5\20\t\2BE\3\2\2\2CE\5\22\n\2D?\3\2\2\2"+
+		"DC\3\2\2\2E\21\3\2\2\2FG\t\2\2\2G\23\3\2\2\2HJ\7\17\2\2IH\3\2\2\2IJ\3"+
+		"\2\2\2JK\3\2\2\2KL\7\20\2\2LM\7\20\2\2MN\7\r\2\2NO\5\26\f\2OP\7\16\2\2"+
+		"P\25\3\2\2\2QR\5\30\r\2RS\7\f\2\2ST\5\26\f\2TX\3\2\2\2UX\5\30\r\2VX\3"+
+		"\2\2\2WQ\3\2\2\2WU\3\2\2\2WV\3\2\2\2X\27\3\2\2\2YZ\7\20\2\2Z[\7\20\2\2"+
+		"[\31\3\2\2\2\t%(\65=DIW";
+	public static final ATN _ATN =
+		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	static {
+		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
+	}
+}
+
+--[ 2017.04.25.18.11.37.248.0 ]--
+InitFile: /src/TestGen.java
+import org.antlr.v4.runtime.*;
+
+import java.io.FileInputStream;
+
+public class TestGen {
+    public static void main(String[] args) throws Exception {
+        FileInputStream inputstream = new FileInputStream("test.txt");
+        ANTLRInputStream input = new ANTLRInputStream(inputstream);
+
+        //ANTLRInputStream input = new ANTLRInputStream(System.in);
+
+        TestGenLexer lexer = new TestGenLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        TestGenParser parser = new TestGenParser(tokens);
+        parser.s(); // parse the input stream starting at rule s
+    };
+}
+
+--[ 2017.04.25.18.11.37.286.0 ]--
+InitFile: /src/TestGenBaseListener.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ErrorNode;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
+/**
+ * This class provides an empty implementation of {@link TestGenListener},
+ * which can be extended to create a listener which only needs to handle a subset
+ * of the available methods.
+ */
+public class TestGenBaseListener implements TestGenListener {
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterS(TestGenParser.SContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitS(TestGenParser.SContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterComment(TestGenParser.CommentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitComment(TestGenParser.CommentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLines(TestGenParser.LinesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLines(TestGenParser.LinesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLine(TestGenParser.LineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLine(TestGenParser.LineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIn(TestGenParser.InContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIn(TestGenParser.InContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOut(TestGenParser.OutContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOut(TestGenParser.OutContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterError(TestGenParser.ErrorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitError(TestGenParser.ErrorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParams(TestGenParser.ParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParams(TestGenParser.ParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParam(TestGenParser.ParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParam(TestGenParser.ParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunc(TestGenParser.FuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunc(TestGenParser.FuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFuncParams(TestGenParser.FuncParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFuncParams(TestGenParser.FuncParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFuncParam(TestGenParser.FuncParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFuncParam(TestGenParser.FuncParamContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEveryRule(ParserRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEveryRule(ParserRuleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void visitTerminal(TerminalNode node) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void visitErrorNode(ErrorNode node) { }
+}
+
+--[ 2017.04.25.18.11.37.317.0 ]--
+InitFile: /gen/TestGenLexer.tokens
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+T__4=5
+T__5=6
+T__6=7
+T__7=8
+T__8=9
+T__9=10
+T__10=11
+T__11=12
+Scope=13
+Word=14
+String=15
+WS=16
+'/*'=1
+'*/'=2
+'*'=3
+'^'=4
+'|'=5
+'$'=6
+'in:'=7
+'out:'=8
+'error:'=9
+','=10
+'('=11
+')'=12
+
+--[ 2017.04.25.18.11.37.317.1 ]--
+InitFile: /TestGen.g4
+grammar TestGen;
+
+s : comment func;
+
+comment : '/*' lines '*/' ;
+
+lines : line lines | ;
+line : '*'? '^' in '|' out '|' error '$';
+
+in : 'in:' params | ;
+out : 'out:' params;
+error : 'error:' params | ;
+
+params : param ',' params | param;
+param : Word | String;
+
+func : Scope? Word Word '(' funcParams ')';
+funcParams :  funcParam ',' funcParams | funcParam | ;
+funcParam : Word Word;
+
+Scope : 'public' | 'private';
+Word : [a-zA-Z0-9]+ ;
+String : '"' [a-zA-Z0-9 ]+ '"';
+
+WS : [' ','\n','    ', '\r'] -> skip;
+
+--[ 2017.04.25.18.11.37.348.0 ]--
+InitFile: /gen/TestGen.tokens
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+T__4=5
+T__5=6
+T__6=7
+T__7=8
+T__8=9
+T__9=10
+T__10=11
+T__11=12
+Scope=13
+Word=14
+String=15
+WS=16
+'/*'=1
+'*/'=2
+'*'=3
+'^'=4
+'|'=5
+'$'=6
+'in:'=7
+'out:'=8
+'error:'=9
+','=10
+'('=11
+')'=12
+
+--[ 2017.04.25.18.11.37.386.0 ]--
+InitFile: /test.txt
+/*
+ * ^in: 2 | out: 3 | error: "error"$
+ */
+int main()
+
+--[ 2017.04.25.18.11.37.386.1 ]--
+InitFile: /src/TestGenBaseVisitor.java
+// Generated from D:/Users/agin6_000/Documents/College/COS 382/group/TestGen\TestGen.g4 by ANTLR 4.6
+import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
+
+/**
+ * This class provides an empty implementation of {@link TestGenVisitor},
+ * which can be extended to create a visitor which only needs to handle a subset
+ * of the available methods.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public class TestGenBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements TestGenVisitor<T> {
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitS(TestGenParser.SContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitComment(TestGenParser.CommentContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitLines(TestGenParser.LinesContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitLine(TestGenParser.LineContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitIn(TestGenParser.InContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitOut(TestGenParser.OutContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitError(TestGenParser.ErrorContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitParams(TestGenParser.ParamsContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitParam(TestGenParser.ParamContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitFunc(TestGenParser.FuncContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitFuncParams(TestGenParser.FuncParamsContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitFuncParam(TestGenParser.FuncParamContext ctx) { return visitChildren(ctx); }
+}
+
+--[ 2017.04.25.18.11.37.402.0 ]--
+InitFile: /TestGen.iml
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="antlr-runtime-4.6" level="project" />
+  </component>
+</module>
+
+--[ 2017.04.25.18.11.39.073.0 ]--
+UpdateTree (AD): 1 0
++ /.log/history.log
+
+--[ 2017.04.25.18.11.55.909.0 ]--
+UpdateTree (AD): 1 0
++ /.idea/compiler.xml
+
+--[ 2017.04.25.18.11.55.971.0 ]--
+UpdateTree (AD): 1 0
++ /.idea/copyright/profiles_settings.xml
+
+--[ 2017.04.25.18.13.01.787.0 ]--
+DisposeComponent
