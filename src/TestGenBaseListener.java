@@ -99,6 +99,30 @@ public class TestGenBaseListener implements TestGenListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterInparams(TestGenParser.InparamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitInparams(TestGenParser.InparamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOutparams(TestGenParser.OutparamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOutparams(TestGenParser.OutparamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterParams(TestGenParser.ParamsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -154,6 +178,18 @@ public class TestGenBaseListener implements TestGenListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFuncParam(TestGenParser.FuncParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFuncname(TestGenParser.FuncnameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFuncname(TestGenParser.FuncnameContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

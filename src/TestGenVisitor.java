@@ -52,6 +52,18 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOut(TestGenParser.OutContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link TestGenParser#inparams}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInparams(TestGenParser.InparamsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#outparams}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOutparams(TestGenParser.OutparamsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link TestGenParser#params}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -81,4 +93,10 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFuncParam(TestGenParser.FuncParamContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#funcname}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncname(TestGenParser.FuncnameContext ctx);
 }

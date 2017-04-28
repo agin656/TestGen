@@ -3,24 +3,28 @@ grammar TestGen;
 s : t EOF;
 
 
-t : t t | comment func;
+t : t comment func | comment func;
 
 comment : '/*' lines '*/' ;
 
 lines : line lines | ;
 line : '*'? '^' in '|' out '$';
 
-in : 'in:' params | ;
-out : 'out:' params;
+in : 'in:' inparams | ;
+out : 'out:' outparams;
+
+inparams : params;
+
+outparams : params;
 
 params : param ',' params | param;
 param : Word | String;
 
-func : Scope? Word Funcname '(' funcParams ')';
+func : Scope? Word funcname '(' funcParams ')';
 funcParams :  funcParam ',' funcParams | funcParam | ;
 funcParam : Word Word;
 
-Funcname : Word;
+funcname : Word;
 Scope : 'public' | 'private';
 Word : [a-zA-Z0-9]+ ;
 String : '"' [a-zA-Z0-9 ]+ '"';

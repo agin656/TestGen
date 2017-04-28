@@ -77,6 +77,26 @@ public interface TestGenListener extends ParseTreeListener {
 	 */
 	void exitOut(TestGenParser.OutContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link TestGenParser#inparams}.
+	 * @param ctx the parse tree
+	 */
+	void enterInparams(TestGenParser.InparamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#inparams}.
+	 * @param ctx the parse tree
+	 */
+	void exitInparams(TestGenParser.InparamsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#outparams}.
+	 * @param ctx the parse tree
+	 */
+	void enterOutparams(TestGenParser.OutparamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#outparams}.
+	 * @param ctx the parse tree
+	 */
+	void exitOutparams(TestGenParser.OutparamsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link TestGenParser#params}.
 	 * @param ctx the parse tree
 	 */
@@ -126,4 +146,14 @@ public interface TestGenListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFuncParam(TestGenParser.FuncParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#funcname}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncname(TestGenParser.FuncnameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#funcname}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncname(TestGenParser.FuncnameContext ctx);
 }
