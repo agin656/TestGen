@@ -1,4 +1,24 @@
-/*
- * ^in: 2 | out: 3 $
- */
-int main()
+class MathOps
+{
+    /*
+    * ^in: 4 | out: 10 $
+    */
+    public int Add(int a, int b){
+        return a+b;
+    }
+    /*
+    * ^in: 12.6f,3.0f | out: 4.2f $
+    */
+    public float Divide(float a, float b){
+        return a/b;
+    }
+
+    /*
+    * ^in: 6 | out: "10" $
+    */
+
+    public string AddToString(int a, int b){
+        return (a+b).ToString();
+    }
+
+}

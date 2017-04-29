@@ -16,8 +16,9 @@ public class TestGen extends TestGenBaseListener{
     String assertS = "Assert.areequal(";
     String varA = "var result = ";
     String main = "public static void main(){ \n";
-    String classA = "class autoGenteratedTest{ \n";
-    String fileSaveAs = "autoGenteratedTest";
+    String classA = "";
+    String fileSaveAs = "";
+    String functionCallInput = "";
     String functionName = "";
     String testerfunctionName = "";
     String testerfunction = "";
@@ -25,16 +26,19 @@ public class TestGen extends TestGenBaseListener{
     String testerCall = "";
     String classToBeTestedName = "";
     String file = "";
+    String functionCallOutput = "";
+    String createInstanceClass ="";
 
 
     @Override
     public void exitS(@NotNull TestGenParser.SContext ctx) {
         main = main.concat("\n}\n");
         classA = classA.concat(main);
-        classA = classA.concat("}");
+        classA = classA.concat("\n}\n");
         System.out.print(classA);
         try{
-            File out = new File("test1.txt");
+
+            File out = new File(fileSaveAs);
             FileWriter writer = new FileWriter(out);
             writer.write(classA);
             writer.flush();
@@ -46,9 +50,12 @@ public class TestGen extends TestGenBaseListener{
 
     }
 
+
+
     @Override
     public void exitT(@NotNull TestGenParser.TContext ctx) {
-        testerfunction=testerfunction.concat("}\n");
+        testerfunction=testerfunction.concat(assertS);
+        testerfunction=testerfunction.concat("\n}\n");
         classA=classA.concat(testerfunction);
         main=main.concat(testerCall);
         functionName = "";
@@ -56,23 +63,62 @@ public class TestGen extends TestGenBaseListener{
         testerfunction = "";
         functionCall = "";
         testerCall = "";
+        functionCallOutput = "";
+        functionCallInput = "";
+        assertS ="";
+
+    }
+
+    @Override
+    public void enterClassName(@NotNull TestGenParser.ClassNameContext ctx) {
+        String text = ctx.getStart().getText();
+        createInstanceClass = createInstanceClass.concat(text);
+        createInstanceClass = createInstanceClass.concat(" x = new ");
+        createInstanceClass = createInstanceClass.concat(text);
+        createInstanceClass = createInstanceClass.concat(";\n");
+        main = main.concat(createInstanceClass);
+        fileSaveAs = fileSaveAs.concat("test");
+        fileSaveAs = fileSaveAs.concat(text);
+        fileSaveAs =fileSaveAs.concat(".cs");
+        classA = classA.concat("class ");
+        classA = classA.concat("test");
+        classA = classA.concat(text);
+        classA = classA.concat("{ \n");
     }
 
     @Override
     public void enterFuncname(@NotNull TestGenParser.FuncnameContext ctx) {
-        String text = ctx.getText();
-        functionName=functionName = text;
-        testerfunctionName= testerfunctionName = "test";
+        String text = ctx.getStart().getText();
+        functionName = text;
+        testerfunctionName = "test";
         testerfunctionName= testerfunctionName.concat(text);
         testerfunction=testerfunction.concat(startFunction);
         testerfunction=testerfunction.concat(testerfunctionName);
-        testerfunction=testerfunction.concat("(){");
+        testerfunction=testerfunction.concat("(){\n");
         functionCall=functionCall.concat(functionName);
         functionCall=functionCall.concat("(");
+        functionCall=functionCall.concat(functionCallInput);
+        assertS = assertS.concat(functionCall);
+        assertS = assertS.concat(",");
+        assertS = assertS.concat(functionCallOutput);
+        assertS = assertS.concat(");\n");
         testerCall=testerCall.concat(testerfunctionName);
-        testerCall=testerCall.concat("(");
+        testerCall=testerCall.concat("(x);\n");
 
 
+    }
+
+    @Override
+    public void enterInparams(@NotNull TestGenParser.InparamsContext ctx) {
+        String text = ctx.getStart().getText();
+        functionCallInput = functionCallInput.concat(text);
+        functionCallInput = functionCallInput.concat(")");
+    }
+
+    @Override
+    public void enterOutparams(@NotNull TestGenParser.OutparamsContext ctx) {
+        String text = ctx.getStart().getText();
+        functionCallOutput = functionCallOutput.concat(text);
     }
 
     public static void main(String[] args) throws Exception {

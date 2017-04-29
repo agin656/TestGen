@@ -1,4 +1,4 @@
-// Generated from X:/cos382/TestGen\TestGen.g4 by ANTLR 4.6
+// Generated from C:/Users/memoy/Desktop/TestGen\TestGen.g4 by ANTLR 4.6
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -16,6 +16,26 @@ public interface TestGenListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitS(TestGenParser.SContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#a}.
+	 * @param ctx the parse tree
+	 */
+	void enterA(TestGenParser.AContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#a}.
+	 * @param ctx the parse tree
+	 */
+	void exitA(TestGenParser.AContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#className}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassName(TestGenParser.ClassNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#className}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassName(TestGenParser.ClassNameContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TestGenParser#t}.
 	 * @param ctx the parse tree

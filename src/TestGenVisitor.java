@@ -1,4 +1,4 @@
-// Generated from X:/cos382/TestGen\TestGen.g4 by ANTLR 4.6
+// Generated from C:/Users/memoy/Desktop/TestGen\TestGen.g4 by ANTLR 4.6
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -15,6 +15,18 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitS(TestGenParser.SContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#a}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitA(TestGenParser.AContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#className}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClassName(TestGenParser.ClassNameContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link TestGenParser#t}.
 	 * @param ctx the parse tree

@@ -1,8 +1,0 @@
-class autoGenteratedTest{ 
-[TestMethod] 
- public void test(){}
-public static void main(){
-
-test(
-}
-}

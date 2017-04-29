@@ -1,4 +1,4 @@
-// Generated from X:/cos382/TestGen\TestGen.g4 by ANTLR 4.6
+// Generated from C:/Users/memoy/Desktop/TestGen\TestGen.g4 by ANTLR 4.6
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -22,6 +22,30 @@ public class TestGenBaseListener implements TestGenListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitS(TestGenParser.SContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterA(TestGenParser.AContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitA(TestGenParser.AContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterClassName(TestGenParser.ClassNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitClassName(TestGenParser.ClassNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
