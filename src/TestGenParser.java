@@ -1,4 +1,4 @@
-// Generated from C:/Users/memoy/Desktop/TestGen\TestGen.g4 by ANTLR 4.6
+// Generated from C:/Users/memoy/Desktop/desk/TestGen\TestGen.g4 by ANTLR 4.6
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -17,8 +17,8 @@ public class TestGenParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, Scope=15, Word=16, String=17, 
-		AnyC=18, WS=19;
+		T__9=10, T__10=11, T__11=12, T__12=13, Num=14, Scope=15, Word=16, String=17, 
+		AnyC=18, WS=19, A=20;
 	public static final int
 		RULE_s = 0, RULE_a = 1, RULE_className = 2, RULE_t = 3, RULE_comment = 4, 
 		RULE_lines = 5, RULE_line = 6, RULE_in = 7, RULE_out = 8, RULE_inparams = 9, 
@@ -30,12 +30,13 @@ public class TestGenParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'class'", "'{'", "'/*'", "'*/'", "'*'", "'^'", "'|'", "'$'", "'in:'", 
-		"'out:'", "','", "'('", "')'", "'}'"
+		null, "'class'", "'{'", "'/*'", "'*/'", "'*'", "'^'", "'$'", "'in:'", 
+		"'out:'", "','", "'('", "')'", "'}'", null, null, null, null, null, null, 
+		"'|'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, "Scope", "Word", "String", "AnyC", "WS"
+		null, null, "Num", "Scope", "Word", "String", "AnyC", "WS", "A"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -475,11 +476,11 @@ public class TestGenParser extends Parser {
 			setState(71);
 			in();
 			setState(72);
-			match(T__6);
+			match(A);
 			setState(73);
 			out();
 			setState(74);
-			match(T__7);
+			match(T__6);
 			}
 		}
 		catch (RecognitionException re) {
@@ -520,25 +521,12 @@ public class TestGenParser extends Parser {
 		InContext _localctx = new InContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_in);
 		try {
-			setState(79);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__8:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(76);
-				match(T__8);
-				setState(77);
-				inparams();
-				}
-				break;
-			case T__6:
-				enterOuterAlt(_localctx, 2);
-				{
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(76);
+			match(T__7);
+			setState(77);
+			inparams();
 			}
 		}
 		catch (RecognitionException re) {
@@ -581,9 +569,9 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(81);
-			match(T__9);
-			setState(82);
+			setState(79);
+			match(T__8);
+			setState(80);
 			outparams();
 			}
 		}
@@ -627,7 +615,7 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(84);
+			setState(82);
 			params();
 			}
 		}
@@ -671,7 +659,7 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(86);
+			setState(84);
 			params();
 			}
 		}
@@ -687,7 +675,6 @@ public class TestGenParser extends Parser {
 	}
 
 	public static class ParamsContext extends ParserRuleContext {
-		public TerminalNode Word() { return getToken(TestGenParser.Word, 0); }
 		public ParamContext param() {
 			return getRuleContext(ParamContext.class,0);
 		}
@@ -717,28 +704,24 @@ public class TestGenParser extends Parser {
 		ParamsContext _localctx = new ParamsContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_params);
 		try {
-			setState(95);
+			setState(91);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(88);
-				match(Word);
-				setState(89);
+				setState(86);
 				param();
-				setState(90);
-				match(T__10);
-				setState(91);
+				setState(87);
+				match(T__9);
+				setState(88);
 				params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(93);
-				match(Word);
-				setState(94);
+				setState(90);
 				param();
 				}
 				break;
@@ -756,8 +739,9 @@ public class TestGenParser extends Parser {
 	}
 
 	public static class ParamContext extends ParserRuleContext {
-		public TerminalNode Word() { return getToken(TestGenParser.Word, 0); }
+		public TerminalNode Num() { return getToken(TestGenParser.Num, 0); }
 		public TerminalNode String() { return getToken(TestGenParser.String, 0); }
+		public TerminalNode Word() { return getToken(TestGenParser.Word, 0); }
 		public ParamContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -784,9 +768,9 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(97);
+			setState(93);
 			_la = _input.LA(1);
-			if ( !(_la==Word || _la==String) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Num) | (1L << Word) | (1L << String))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -843,32 +827,32 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(100);
+			setState(96);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==Scope) {
 				{
-				setState(99);
+				setState(95);
 				match(Scope);
 				}
 			}
 
-			setState(102);
+			setState(98);
 			match(Word);
-			setState(103);
+			setState(99);
 			funcname();
-			setState(104);
-			match(T__11);
-			setState(105);
+			setState(100);
+			match(T__10);
+			setState(101);
 			funcParams();
-			setState(106);
-			match(T__12);
-			setState(107);
+			setState(102);
+			match(T__11);
+			setState(103);
 			match(T__1);
-			setState(108);
+			setState(104);
 			match(AnyC);
-			setState(109);
-			match(T__13);
+			setState(105);
+			match(T__12);
 			}
 		}
 		catch (RecognitionException re) {
@@ -912,24 +896,24 @@ public class TestGenParser extends Parser {
 		FuncParamsContext _localctx = new FuncParamsContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_funcParams);
 		try {
-			setState(117);
+			setState(113);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(111);
+				setState(107);
 				funcParam();
-				setState(112);
-				match(T__10);
-				setState(113);
+				setState(108);
+				match(T__9);
+				setState(109);
 				funcParams();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(115);
+				setState(111);
 				funcParam();
 				}
 				break;
@@ -952,10 +936,12 @@ public class TestGenParser extends Parser {
 	}
 
 	public static class FuncParamContext extends ParserRuleContext {
-		public List<TerminalNode> Word() { return getTokens(TestGenParser.Word); }
-		public TerminalNode Word(int i) {
-			return getToken(TestGenParser.Word, i);
+		public TerminalNode Word() { return getToken(TestGenParser.Word, 0); }
+		public FuncParamContext funcParam() {
+			return getRuleContext(FuncParamContext.class,0);
 		}
+		public TerminalNode Num() { return getToken(TestGenParser.Num, 0); }
+		public TerminalNode String() { return getToken(TestGenParser.String, 0); }
 		public FuncParamContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -979,12 +965,44 @@ public class TestGenParser extends Parser {
 		FuncParamContext _localctx = new FuncParamContext(_ctx, getState());
 		enterRule(_localctx, 30, RULE_funcParam);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(119);
-			match(Word);
-			setState(120);
-			match(Word);
+			setState(122);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case Word:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(115);
+				match(Word);
+				setState(116);
+				funcParam();
+				}
+				break;
+			case Num:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(117);
+				match(Num);
+				setState(118);
+				funcParam();
+				}
+				break;
+			case String:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(119);
+				match(String);
+				setState(120);
+				funcParam();
+				}
+				break;
+			case T__9:
+			case T__11:
+				enterOuterAlt(_localctx, 4);
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1025,7 +1043,7 @@ public class TestGenParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(122);
+			setState(124);
 			match(Word);
 			}
 		}
@@ -1056,35 +1074,36 @@ public class TestGenParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\25\177\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\26\u0081\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
 		"\5\7\5\67\n\5\f\5\16\5:\13\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7\5\7D\n\7"+
-		"\3\b\5\bG\n\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\5\tR\n\t\3\n\3\n\3\n"+
-		"\3\13\3\13\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\rb\n\r\3\16\3\16\3\17"+
-		"\5\17g\n\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20"+
-		"\3\20\3\20\3\20\5\20x\n\20\3\21\3\21\3\21\3\22\3\22\3\22\2\3\b\23\2\4"+
-		"\6\b\n\f\16\20\22\24\26\30\32\34\36 \"\2\3\3\2\22\23u\2$\3\2\2\2\4(\3"+
-		"\2\2\2\6,\3\2\2\2\b.\3\2\2\2\n;\3\2\2\2\fC\3\2\2\2\16F\3\2\2\2\20Q\3\2"+
-		"\2\2\22S\3\2\2\2\24V\3\2\2\2\26X\3\2\2\2\30a\3\2\2\2\32c\3\2\2\2\34f\3"+
-		"\2\2\2\36w\3\2\2\2 y\3\2\2\2\"|\3\2\2\2$%\5\4\3\2%&\5\b\5\2&\'\7\2\2\3"+
-		"\'\3\3\2\2\2()\7\3\2\2)*\5\6\4\2*+\7\4\2\2+\5\3\2\2\2,-\7\22\2\2-\7\3"+
-		"\2\2\2./\b\5\1\2/\60\5\n\6\2\60\61\5\34\17\2\618\3\2\2\2\62\63\f\4\2\2"+
-		"\63\64\5\n\6\2\64\65\5\34\17\2\65\67\3\2\2\2\66\62\3\2\2\2\67:\3\2\2\2"+
-		"8\66\3\2\2\289\3\2\2\29\t\3\2\2\2:8\3\2\2\2;<\7\5\2\2<=\5\f\7\2=>\7\6"+
-		"\2\2>\13\3\2\2\2?@\5\16\b\2@A\5\f\7\2AD\3\2\2\2BD\3\2\2\2C?\3\2\2\2CB"+
-		"\3\2\2\2D\r\3\2\2\2EG\7\7\2\2FE\3\2\2\2FG\3\2\2\2GH\3\2\2\2HI\7\b\2\2"+
-		"IJ\5\20\t\2JK\7\t\2\2KL\5\22\n\2LM\7\n\2\2M\17\3\2\2\2NO\7\13\2\2OR\5"+
-		"\24\13\2PR\3\2\2\2QN\3\2\2\2QP\3\2\2\2R\21\3\2\2\2ST\7\f\2\2TU\5\26\f"+
-		"\2U\23\3\2\2\2VW\5\30\r\2W\25\3\2\2\2XY\5\30\r\2Y\27\3\2\2\2Z[\7\22\2"+
-		"\2[\\\5\32\16\2\\]\7\r\2\2]^\5\30\r\2^b\3\2\2\2_`\7\22\2\2`b\5\32\16\2"+
-		"aZ\3\2\2\2a_\3\2\2\2b\31\3\2\2\2cd\t\2\2\2d\33\3\2\2\2eg\7\21\2\2fe\3"+
-		"\2\2\2fg\3\2\2\2gh\3\2\2\2hi\7\22\2\2ij\5\"\22\2jk\7\16\2\2kl\5\36\20"+
-		"\2lm\7\17\2\2mn\7\4\2\2no\7\24\2\2op\7\20\2\2p\35\3\2\2\2qr\5 \21\2rs"+
-		"\7\r\2\2st\5\36\20\2tx\3\2\2\2ux\5 \21\2vx\3\2\2\2wq\3\2\2\2wu\3\2\2\2"+
-		"wv\3\2\2\2x\37\3\2\2\2yz\7\22\2\2z{\7\22\2\2{!\3\2\2\2|}\7\22\2\2}#\3"+
-		"\2\2\2\t8CFQafw";
+		"\3\b\5\bG\n\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\n\3\n\3\n\3\13\3\13"+
+		"\3\f\3\f\3\r\3\r\3\r\3\r\3\r\5\r^\n\r\3\16\3\16\3\17\5\17c\n\17\3\17\3"+
+		"\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\5"+
+		"\20t\n\20\3\21\3\21\3\21\3\21\3\21\3\21\3\21\5\21}\n\21\3\22\3\22\3\22"+
+		"\2\3\b\23\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"\2\3\4\2\20\20\22\23"+
+		"y\2$\3\2\2\2\4(\3\2\2\2\6,\3\2\2\2\b.\3\2\2\2\n;\3\2\2\2\fC\3\2\2\2\16"+
+		"F\3\2\2\2\20N\3\2\2\2\22Q\3\2\2\2\24T\3\2\2\2\26V\3\2\2\2\30]\3\2\2\2"+
+		"\32_\3\2\2\2\34b\3\2\2\2\36s\3\2\2\2 |\3\2\2\2\"~\3\2\2\2$%\5\4\3\2%&"+
+		"\5\b\5\2&\'\7\2\2\3\'\3\3\2\2\2()\7\3\2\2)*\5\6\4\2*+\7\4\2\2+\5\3\2\2"+
+		"\2,-\7\22\2\2-\7\3\2\2\2./\b\5\1\2/\60\5\n\6\2\60\61\5\34\17\2\618\3\2"+
+		"\2\2\62\63\f\4\2\2\63\64\5\n\6\2\64\65\5\34\17\2\65\67\3\2\2\2\66\62\3"+
+		"\2\2\2\67:\3\2\2\28\66\3\2\2\289\3\2\2\29\t\3\2\2\2:8\3\2\2\2;<\7\5\2"+
+		"\2<=\5\f\7\2=>\7\6\2\2>\13\3\2\2\2?@\5\16\b\2@A\5\f\7\2AD\3\2\2\2BD\3"+
+		"\2\2\2C?\3\2\2\2CB\3\2\2\2D\r\3\2\2\2EG\7\7\2\2FE\3\2\2\2FG\3\2\2\2GH"+
+		"\3\2\2\2HI\7\b\2\2IJ\5\20\t\2JK\7\26\2\2KL\5\22\n\2LM\7\t\2\2M\17\3\2"+
+		"\2\2NO\7\n\2\2OP\5\24\13\2P\21\3\2\2\2QR\7\13\2\2RS\5\26\f\2S\23\3\2\2"+
+		"\2TU\5\30\r\2U\25\3\2\2\2VW\5\30\r\2W\27\3\2\2\2XY\5\32\16\2YZ\7\f\2\2"+
+		"Z[\5\30\r\2[^\3\2\2\2\\^\5\32\16\2]X\3\2\2\2]\\\3\2\2\2^\31\3\2\2\2_`"+
+		"\t\2\2\2`\33\3\2\2\2ac\7\21\2\2ba\3\2\2\2bc\3\2\2\2cd\3\2\2\2de\7\22\2"+
+		"\2ef\5\"\22\2fg\7\r\2\2gh\5\36\20\2hi\7\16\2\2ij\7\4\2\2jk\7\24\2\2kl"+
+		"\7\17\2\2l\35\3\2\2\2mn\5 \21\2no\7\f\2\2op\5\36\20\2pt\3\2\2\2qt\5 \21"+
+		"\2rt\3\2\2\2sm\3\2\2\2sq\3\2\2\2sr\3\2\2\2t\37\3\2\2\2uv\7\22\2\2v}\5"+
+		" \21\2wx\7\20\2\2x}\5 \21\2yz\7\23\2\2z}\5 \21\2{}\3\2\2\2|u\3\2\2\2|"+
+		"w\3\2\2\2|y\3\2\2\2|{\3\2\2\2}!\3\2\2\2~\177\7\22\2\2\177#\3\2\2\2\t8"+
+		"CF]bs|";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

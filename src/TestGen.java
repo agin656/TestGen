@@ -13,10 +13,17 @@ public class TestGen extends TestGenBaseListener{
     int listExits = 0;
     String Total;
     String startFunction= "[TestMethod] \n public void ";
-    String assertS = "Assert.areequal(";
+    String assertS = "";
+    String assertS1 = "Assert.areequal(";
     String varA = "var result = ";
     String main = "public static void main(){ \n";
-    String classA = "";
+    String classA = "// unit test code  \n" +
+            "using System;  \n" +
+            "using Microsoft.VisualStudio.TestTools.UnitTesting;  \n" +
+            "  \n" +
+            "namespace BankTests  \n" +
+            "{  \n" +
+            "    [TestClass] \n";
     String fileSaveAs = "";
     String functionCallInput = "";
     String functionName = "";
@@ -35,9 +42,10 @@ public class TestGen extends TestGenBaseListener{
         main = main.concat("\n}\n");
         classA = classA.concat(main);
         classA = classA.concat("\n}\n");
-        System.out.print(classA);
+        classA = classA.concat("using ");
+        classA = classA.concat(classToBeTestedName);
+        classA = classA.concat(";\n }");
         try{
-
             File out = new File(fileSaveAs);
             FileWriter writer = new FileWriter(out);
             writer.write(classA);
@@ -72,6 +80,7 @@ public class TestGen extends TestGenBaseListener{
     @Override
     public void enterClassName(@NotNull TestGenParser.ClassNameContext ctx) {
         String text = ctx.getStart().getText();
+        classToBeTestedName = classToBeTestedName.concat(text);
         createInstanceClass = createInstanceClass.concat(text);
         createInstanceClass = createInstanceClass.concat(" x = new ");
         createInstanceClass = createInstanceClass.concat(text);
@@ -98,6 +107,7 @@ public class TestGen extends TestGenBaseListener{
         functionCall=functionCall.concat(functionName);
         functionCall=functionCall.concat("(");
         functionCall=functionCall.concat(functionCallInput);
+        assertS = assertS.concat( assertS1);
         assertS = assertS.concat(functionCall);
         assertS = assertS.concat(",");
         assertS = assertS.concat(functionCallOutput);
@@ -111,6 +121,7 @@ public class TestGen extends TestGenBaseListener{
     @Override
     public void enterInparams(@NotNull TestGenParser.InparamsContext ctx) {
         String text = ctx.getStart().getText();
+        //System.out.println(text);
         functionCallInput = functionCallInput.concat(text);
         functionCallInput = functionCallInput.concat(")");
     }
@@ -118,6 +129,7 @@ public class TestGen extends TestGenBaseListener{
     @Override
     public void enterOutparams(@NotNull TestGenParser.OutparamsContext ctx) {
         String text = ctx.getStart().getText();
+        System.out.println(text);
         functionCallOutput = functionCallOutput.concat(text);
     }
 
@@ -135,5 +147,5 @@ public class TestGen extends TestGenBaseListener{
 
         ParseTree tree = parser.s(); // parse the input stream starting at rule start
         System.out.println(tree.toStringTree(parser));
-    };
+    }
 }
