@@ -28,6 +28,12 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassName(TestGenParser.ClassNameContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link TestGenParser#ts}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTs(TestGenParser.TsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link TestGenParser#t}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -39,6 +45,18 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitComment(TestGenParser.CommentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#comment1}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitComment1(TestGenParser.Comment1Context ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#func1}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunc1(TestGenParser.Func1Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link TestGenParser#lines}.
 	 * @param ctx the parse tree
@@ -105,6 +123,12 @@ public interface TestGenVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFuncParam(TestGenParser.FuncParamContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TestGenParser#body}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBody(TestGenParser.BodyContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link TestGenParser#funcname}.
 	 * @param ctx the parse tree

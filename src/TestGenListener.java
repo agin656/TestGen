@@ -37,6 +37,16 @@ public interface TestGenListener extends ParseTreeListener {
 	 */
 	void exitClassName(TestGenParser.ClassNameContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link TestGenParser#ts}.
+	 * @param ctx the parse tree
+	 */
+	void enterTs(TestGenParser.TsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#ts}.
+	 * @param ctx the parse tree
+	 */
+	void exitTs(TestGenParser.TsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link TestGenParser#t}.
 	 * @param ctx the parse tree
 	 */
@@ -56,6 +66,26 @@ public interface TestGenListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitComment(TestGenParser.CommentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#comment1}.
+	 * @param ctx the parse tree
+	 */
+	void enterComment1(TestGenParser.Comment1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#comment1}.
+	 * @param ctx the parse tree
+	 */
+	void exitComment1(TestGenParser.Comment1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#func1}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunc1(TestGenParser.Func1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#func1}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunc1(TestGenParser.Func1Context ctx);
 	/**
 	 * Enter a parse tree produced by {@link TestGenParser#lines}.
 	 * @param ctx the parse tree
@@ -166,6 +196,16 @@ public interface TestGenListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFuncParam(TestGenParser.FuncParamContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TestGenParser#body}.
+	 * @param ctx the parse tree
+	 */
+	void enterBody(TestGenParser.BodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TestGenParser#body}.
+	 * @param ctx the parse tree
+	 */
+	void exitBody(TestGenParser.BodyContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TestGenParser#funcname}.
 	 * @param ctx the parse tree
