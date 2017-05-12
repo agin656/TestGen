@@ -1,32 +1,37 @@
-// this is auto generated unit test code writen in c# for instructions go to https://github.com/agin656/TestGen   
+// this is auto generated unit test code written in c# for instructions go 
+//to https://github.com/agin656/TestGen   
 using System;  
-using Microsoft.VisualStudio.TestTools.UnitTesting;  
-using MathOps;
   
-    [TestClass] 
+  
+ 
 class testMathOps{ 
-[TestMethod] 
- public void testDivide(){
-Assert.areequal(Divide(12.6f,3.0f), 4.2f);
+ public void testDivide(MathOps x){
+if( x.Divide(12.6f,3.0f) == 4.2f){ Console.Out.WriteLine("Divide 0 succeeded"); }
+ else{Console.Out.WriteLine(" Divide 0 failed"); } 
 
 }
-[TestMethod] 
- public void testAdd(){
-Assert.areequal(Add(12.6f,3.0f), 12.6f);
-Assert.areequal(Add(12.6f,13.0f), 25.6f);
+ public void testAdd(MathOps x){
+if( x.Add(12.6f,3.0f) == 3.0f){ Console.Out.WriteLine("Add 0 succeeded"); }
+ else{Console.Out.WriteLine(" Add 0 failed"); } 
+if( x.Add(12.6f,13.0f) == 25.6f){ Console.Out.WriteLine("Add 1 succeeded"); }
+ else{Console.Out.WriteLine(" Add 1 failed"); } 
 
 }
-[TestMethod] 
- public void testAddToString(){
-Assert.areequal(AddToString(6,10), "25");
-Assert.areequal(AddToString(3,7), "10");
+ public void testAddToString(MathOps x){
+if( x.AddToString(6,10) == 10){ Console.Out.WriteLine("AddToString 0 succeeded"); }
+ else{Console.Out.WriteLine(" AddToString 0 failed"); } 
+if( x.AddToString(3,7) == 10){ Console.Out.WriteLine("AddToString 1 succeeded"); }
+ else{Console.Out.WriteLine(" AddToString 1 failed"); } 
 
 }
-public static void main(){ 
+public static void Main(){ 
 MathOps x = new MathOps();
-testDivide(x);
-testAdd(x);
-testAddToString(x);
+testMathOps y = new testMathOps();
+y.testDivide(x);
+y.testAdd(x);
+y.testAddToString(x);
+
 }
+
 }
 

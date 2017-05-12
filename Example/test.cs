@@ -16,7 +16,7 @@ class MathOps
         return a;
      }
     /*
-    * ^in: 12.6f,3.0f | out: 12.6f $
+    * ^in: 12.6f,3.0f | out: 3.0f $
     * ^in: 12.6f,13.0f | out: 25.6f $
     */
     public float Add(float c, float d){
@@ -47,14 +47,10 @@ class MathOps
         }
     }
     /*
-    * ^in: 6,10 | out: "25" $
-    * ^in: 3,7 | out: "10" $
+    * ^in: 6,10 | out: 10 $
+    * ^in: 3,7 | out: 10 $
     */
-    public string AddToString(int e, int f){
-        int a = 1;
-        while(a < e){
-            f = f + 1;
-        }
-        return f.ToString();
+    public int AddToString(int e, int f){
+        return f;
     }
 }
