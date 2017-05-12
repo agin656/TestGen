@@ -149,7 +149,7 @@ public class TestGen extends TestGenBaseListener{
     }
 
     public static void main(String[] args) throws Exception {
-        FileInputStream inputstream = new FileInputStream("test.txt");
+        FileInputStream inputstream = new FileInputStream("test.cs");
         ANTLRInputStream input = new ANTLRInputStream(inputstream);
 
         //ANTLRInputStream input = new ANTLRInputStream(System.in);
