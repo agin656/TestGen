@@ -4,7 +4,7 @@ class MathOps
     * ^in: 12.6f,3.0f | out: 4.2f $
     */
     public float Divide(float c, float d){
-        return (c/d)
+        return (c / d);
     }
     public int c(int a, int b, int c){
         return c;
@@ -31,7 +31,7 @@ class MathOps
     }
     private void printhelloworld(){
         // this is how c# writes to console
-        Console.WriteLine(helloworld());
+        //ConWriteLine(helloworld());
     }
     /*
     * ^in: 10,12,14 | out: 12 $
@@ -55,6 +55,6 @@ class MathOps
         while(a < e){
             f = f + 1;
         }
-        return f.toString();
+        return f.ToString();
     }
 }

@@ -19,12 +19,11 @@ public class TestGen extends TestGenBaseListener{
     String assertS1 = "Assert.areequal(";
     String varA = "var result = ";
     String main = "public static void main(){ \n";
-    String classA = "// unit test code  \n" +
+    String classA = "// this is auto generated unit test code written in c# for instructions go \n" +
+            "to https://github.com/agin656/TestGen   \n" +
             "using System;  \n" +
             "using Microsoft.VisualStudio.TestTools.UnitTesting;  \n";
     String append = "  \n" +
-            "namespace BankTests  \n" +
-            "{  \n" +
             "    [TestClass] \n";
     String fileSaveAs = "";
     String functionCallInput = "";
@@ -43,7 +42,7 @@ public class TestGen extends TestGenBaseListener{
         main = main.concat("\n}\n");
         classA = classA.concat(main);
         classA = classA.concat("\n}\n");
-        classA = classA.concat("\n }");
+        classA = classA.concat("\n");
         try{
             File out = new File(fileSaveAs);
             FileWriter writer = new FileWriter(out);
@@ -81,7 +80,7 @@ public class TestGen extends TestGenBaseListener{
         createInstanceClass = createInstanceClass.concat(text);
         createInstanceClass = createInstanceClass.concat(" x = new ");
         createInstanceClass = createInstanceClass.concat(text);
-        createInstanceClass = createInstanceClass.concat(";\n");
+        createInstanceClass = createInstanceClass.concat("();\n");
         main = main.concat(createInstanceClass);
         fileSaveAs = fileSaveAs.concat("test");
         fileSaveAs = fileSaveAs.concat(text);
@@ -105,7 +104,7 @@ public class TestGen extends TestGenBaseListener{
         testerfunction=testerfunction.concat(startFunction);
         testerfunction=testerfunction.concat(testerfunctionName);
         testerfunction=testerfunction.concat("(){\n");
-        System.out.println(testerfunction);
+        //System.out.println(testerfunction);
         for(int i = 0; i <= inputs.size()-1; i++) {
             functionCall=functionCall.concat(functionName);
             functionCall=functionCall.concat("(");
@@ -122,7 +121,7 @@ public class TestGen extends TestGenBaseListener{
             assertS ="";
             functionCall = "";
         }
-        System.out.println(testerfunction);
+        //System.out.println(testerfunction);
         outputs.clear();
         inputs.clear();
         testerCall=testerCall.concat(testerfunctionName);
@@ -143,13 +142,13 @@ public class TestGen extends TestGenBaseListener{
     @Override
     public void enterOutparams(@NotNull TestGenParser.OutparamsContext ctx) {
         String text = ctx.getStart().getText();
-        System.out.println(text);
+        //System.out.println(text);
         outputs.add(text);
         //functionCallOutput = functionCallOutput.concat(text);
     }
 
     public static void main(String[] args) throws Exception {
-        FileInputStream inputstream = new FileInputStream("test.cs");
+        FileInputStream inputstream = new FileInputStream("Example/test.cs");
         ANTLRInputStream input = new ANTLRInputStream(inputstream);
 
         //ANTLRInputStream input = new ANTLRInputStream(System.in);
